@@ -12,6 +12,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Net;
 using OpenQA.Selenium.Support.UI;
+using System.Timers;
 
 namespace SeatsFinderBot
 {
@@ -76,7 +77,7 @@ namespace SeatsFinderBot
             driver.Navigate().GoToUrl("https://go.oasis.asu.edu/addclass/?STRM=2197&ACAD_CAREER=GRAD");
 
             //Login
-            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//frame[@src='https://weblogin.asu.edu/cgi-bin/login?callapp=https%3A//go.oasis.asu.edu/waitframeset.html%3Fdelay%3D3500%26url%3Dhttps%253A//cs.oasis.asu.edu/asucsprd/golink/%253F/EMPLOYEE/PSFT_ASUCSPRD/s/WEBLIB_ASU_SA.ASU_SA_ISCRIPT.FieldFormula.IScript_SA%253FURL%253D/EMPLOYEE/PSFT_ASUCSPRD/c/SA_LEARNER_SERVICES.SSR_SSENRL_CART.GBL%25253FSTRM%25253D2187%252526ACAD_CAREER%25253DGRAD%252526Page%25253DSSR_SSENRL_ADD%252526Action%25253DA%252526INSTITUTION%25253DASU00%252526golink%25253DY']")));
+            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//frame[@src='https://weblogin.asu.edu/cgi-bin/login?callapp=https%3A//go.oasis.asu.edu/waitframeset.html%3Fdelay%3D3500%26url%3Dhttps%253A//cs.oasis.asu.edu/asucsprd/golink/%253F/EMPLOYEE/PSFT_ASUCSPRD/s/WEBLIB_ASU_SA.ASU_SA_ISCRIPT.FieldFormula.IScript_SA%253FURL%253D/EMPLOYEE/PSFT_ASUCSPRD/c/SA_LEARNER_SERVICES.SSR_SSENRL_CART.GBL%25253FSTRM%25253D2197%252526ACAD_CAREER%25253DGRAD%252526Page%25253DSSR_SSENRL_ADD%252526Action%25253DA%252526INSTITUTION%25253DASU00%252526golink%25253DY']")));
             driver.FindElement(By.Id("username")).SendKeys(username);
             driver.FindElement(By.Id("password")).SendKeys(password);
             driver.FindElement(By.ClassName("submit")).Click();
@@ -141,7 +142,7 @@ namespace SeatsFinderBot
             driver.Navigate().GoToUrl("https://go.oasis.asu.edu/swapclass/?STRM=2197&ACAD_CAREER=GRAD&ASU_CLASS_NBR=" + sectionNum);
 
             //Login
-            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//frame[@src='https://weblogin.asu.edu/cgi-bin/login?callapp=https%3A//go.oasis.asu.edu/waitframeset.html%3Fdelay%3D3500%26url%3Dhttps%253A//cs.oasis.asu.edu/asucsprd/golink/%253F/EMPLOYEE/PSFT_ASUCSPRD/s/WEBLIB_ASU_SA.ASU_SA_ISCRIPT.FieldFormula.IScript_SA%253FURL%253D/EMPLOYEE/PSFT_ASUCSPRD/c/SA_LEARNER_SERVICES.SSR_SSENRL_SWAP.GBL%25253FSTRM%25253D2187%252526ACAD_CAREER%25253DGRAD%252526ASU_CLASS_NBR%25253D" + sectionNum + "%252526Page%25253DSSR_SSENRL_SWAP%252526Action%25253DA%252526INSTITUTION%25253DASU00%252526golink%25253DY']")));
+            driver.SwitchTo().Frame(driver.FindElement(By.XPath("//frame[@src='https://weblogin.asu.edu/cgi-bin/login?callapp=https%3A//go.oasis.asu.edu/waitframeset.html%3Fdelay%3D3500%26url%3Dhttps%253A//cs.oasis.asu.edu/asucsprd/golink/%253F/EMPLOYEE/PSFT_ASUCSPRD/s/WEBLIB_ASU_SA.ASU_SA_ISCRIPT.FieldFormula.IScript_SA%253FURL%253D/EMPLOYEE/PSFT_ASUCSPRD/c/SA_LEARNER_SERVICES.SSR_SSENRL_CART.GBL%25253FSTRM%25253D2197%252526ACAD_CAREER%25253DGRAD%252526ASU_CLASS_NBR%25253D11289%252526Page%25253DSSR_SSENRL_SWAP%252526Action%25253DA%252526INSTITUTION%25253DASU00%252526golink%25253DY'")));
             driver.FindElement(By.Id("username")).SendKeys(username);
             driver.FindElement(By.Id("password")).SendKeys(password);
             driver.FindElement(By.ClassName("submit")).Click();
@@ -216,24 +217,25 @@ namespace SeatsFinderBot
             string currentTime = DateTime.Now.ToString("MM\\/dd\\/yyyy h\\:mm tt");
 
             string sec = sectionText.Text;
-            string res = reservedText.Text;
-            string gui = guidText.Text;
+            //string res = reservedText.Text;
+            //string gui = guidText.Text;
 
 
             try
             {
-                string classStatus = client.DownloadString("https://seatsfinderweb.azurewebsites.net/api/WebAPI?checkClassStatus=true&prefix=&number=&location=Tempe&term=Spring+2019&sectionNumber=" + sec + "&reservedSeats=" + res);
+                string classStatus = client.DownloadString("https://seatsfinderweb.azurewebsites.net/api/WebAPI?checkClassStatus=true&prefix=&number=&location=Tempe&term=Spring+2019&sectionNumber=" + sec + "&reservedSeats=0");
 
                 System.Diagnostics.Debug.WriteLine("classStatus: " + classStatus);
 
                 if (classStatus == "\"FULL\"")
                 {
                     // Do nothing
-                    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + gui + "&taskID=" + sec + "&time=" + currentTime + "&status=FULL");
+                //    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + gui + "&taskID=" + sec + "&time=" + currentTime + "&status=FULL");
 
                 }
                 else if (classStatus == "\"OPEN\"")
                 {
+                    /*
                     if (swapRadio.Checked)
                     {
                         String FinalStatus = SuperPowerAutomates_swap(userText.Text, passwordText.Text, sectionText.Text);
@@ -245,18 +247,19 @@ namespace SeatsFinderBot
                     }
                     else if (addRadio.Checked)
                     {
+                    */
                         String FinalStatus = SuperPowerAutomates_add(userText.Text, passwordText.Text, sectionText.Text);
 
-                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + gui + "&taskID=" + sec + "&time=" + currentTime + "&status=OPEN");
+                      //  client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + gui + "&taskID=" + sec + "&time=" + currentTime + "&status=OPEN");
 
                         // [Error, Success, Unknown]
-                        System.Diagnostics.Debug.WriteLine(FinalStatus);
-                    }
+                       // System.Diagnostics.Debug.WriteLine(FinalStatus);
+                    /*}
                     else
                     {
 
                     }
-
+                */
                 }
                 //GetSuperPowerVMTaskSchedulerStatus(string guid, string taskID, string time, bool status)
 
@@ -267,7 +270,7 @@ namespace SeatsFinderBot
 
                 try
                 {
-                    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + gui + "&taskID=" + sec + "&time=" + currentTime + "&status=Exception");
+                    //client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + gui + "&taskID=" + sec + "&time=" + currentTime + "&status=Exception");
                 }
                 catch (Exception ex2)
                 {
@@ -278,22 +281,21 @@ namespace SeatsFinderBot
             }
         }
 
-
+        int i = 0;
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             var startTimeSpan = TimeSpan.Zero;
             var periodTimeSpan = TimeSpan.FromMinutes(1);
-
-            var timer = new System.Threading.Timer(
-            e1 => runAction(),
-            null,
-            TimeSpan.Zero,
-            TimeSpan.FromSeconds(10));
+            var timer = new System.Threading.Timer((e1) => {
+                runAction();
+            }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //statusLabel.Text = "";
         }
 
     }
