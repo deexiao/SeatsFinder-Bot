@@ -1,0 +1,15 @@
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\SeatsFinderBot.exe.config
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\SeatsFinderBot.exe
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\SeatsFinderBot.pdb
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\WebDriver.dll
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\WebDriver.Support.dll
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\WebDriver.xml
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Debug\WebDriver.Support.xml
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.csprojAssemblyReference.cache
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.Form1.resources
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.Properties.Resources.resources
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.csproj.GenerateResource.cache
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.csproj.CoreCompileInputs.cache
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.csproj.CopyComplete
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.exe
+W:\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Debug\SeatsFinderBot.pdb
