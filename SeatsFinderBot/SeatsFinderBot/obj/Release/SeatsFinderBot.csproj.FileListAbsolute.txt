@@ -1,0 +1,15 @@
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\SeatsFinderBot.exe.config
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\SeatsFinderBot.exe
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\SeatsFinderBot.pdb
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\WebDriver.dll
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\WebDriver.Support.dll
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\WebDriver.xml
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\bin\Release\WebDriver.Support.xml
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.Form1.resources
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.Properties.Resources.resources
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.csproj.GenerateResource.cache
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.csproj.CoreCompileInputs.cache
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.csproj.CopyComplete
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.exe
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.pdb
+\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.csprojAssemblyReference.cache
