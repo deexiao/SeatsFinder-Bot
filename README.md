@@ -1,1 +1,20 @@
-# SeatsFinderBot
+## ASU Class Register Bot 
+
+#### System Requirement
+* Windows 
+
+#### How it works
+* Bot runs every 10 seconds by regularly checking API.
+
+#### How to use
+* Download the repository to your ***_Windows_*** computer.
+* Open ***.../bin/Release/SeatsFinderBot.exe*** [Open it in folder, don't move it out].
+* Enter the required options.
+* You can use either in your local PC or put it in a cloud VM so that you don't have to shut down your computer.
+* Enjoy!
+
+![botimage-w834](botimage.png)
+
+#### My Other Apps [Same Functions But in Different Platforms]
+* iOS App: **_*[SeatsFinder](https://itunes.apple.com/us/app/seatsfinder/id1111929351?mt=8)*_** 
+* Web App: ***_[seatsfinder.tk](http://www.seatsfinder.tk/)_*** 
