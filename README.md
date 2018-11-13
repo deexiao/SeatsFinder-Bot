@@ -13,7 +13,7 @@
 * You can open either on your local PC or put it in a cloud VM so that you don't have to shut down your computer.
 * Enjoy!
 
-![botimage-w834](botimage.png)
+![botimage](botimage.png)
 
 #### My Other Apps [Same Functions But in Different Platforms]
 * iOS App: **_*[SeatsFinder](https://itunes.apple.com/us/app/seatsfinder/id1111929351?mt=8)*_** 
