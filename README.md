@@ -7,7 +7,7 @@
 * Bot runs every 10 seconds by regularly checking ***_[https://webapp4.asu.edu/catalog](https://webapp4.asu.edu/catalog)_*** 
 
 #### How to use
-* ***_First_***, you will need a KEY to get access. 
+* First, you will need a KEY to get access. 
 * Download the repository to your ***_Windows_*** computer.
 * Open ***SeatsFinderBot.exe*** [Open it in folder, don't move it out].
 * Enter the required options.
