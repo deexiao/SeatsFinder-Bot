@@ -4,7 +4,7 @@
 * Windows 10
 
 #### How it works
-* Bot runs every 10 seconds by regularly checking ***_[seatsfinder.tk](https://webapp4.asu.edu/catalog)_*** 
+* Bot runs every 10 seconds by regularly checking ***_[https://webapp4.asu.edu/catalog](https://webapp4.asu.edu/catalog)_*** 
 
 #### How to use
 * Download the repository to your ***_Windows_*** computer.
