@@ -19,3 +19,6 @@
 #### My Other Apps [Same Functions But in Different Platforms]
 * iOS App: **_*[SeatsFinder](https://itunes.apple.com/us/app/seatsfinder/id1111929351?mt=8)*_** 
 * Web App: ***_[seatsfinder.tk](http://www.seatsfinder.tk/)_*** 
+
+#### Claim
+* SeatsFinderBot does not store any of your personal information.
