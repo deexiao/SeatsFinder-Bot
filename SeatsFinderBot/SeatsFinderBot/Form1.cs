@@ -47,33 +47,18 @@ namespace SeatsFinderBot
             string STRM = "";
 
             if (semesterCombo == "Spring+2019") STRM = "2191";
-
             if (semesterCombo == "Spring+2020") STRM = "2201";
-
             if (semesterCombo == "Spring+2021") STRM = "2211";
-
             if (semesterCombo == "Spring+2022") STRM = "2221";
-
             if (semesterCombo == "Spring+2023") STRM = "2231";
-
             if (semesterCombo == "Spring+2024") STRM = "2241";
-
             if (semesterCombo == "Spring+2025") STRM = "2251";
-
-
-
             if (semesterCombo == "Fall+2019") STRM = "2197";
-
             if (semesterCombo == "Fall+2020") STRM = "2207";
-
             if (semesterCombo == "Fall+2021") STRM = "2217";
-
             if (semesterCombo == "Fall+2022") STRM = "2227";
-
             if (semesterCombo == "Fall+2023") STRM = "2237";
-
             if (semesterCombo == "Fall+2024") STRM = "2247";
-
             if (semesterCombo == "Fall+2025") STRM = "2257";
 
             driver.Navigate().GoToUrl("https://go.oasis.asu.edu/addclass/?STRM="+ STRM + "&ACAD_CAREER=GRAD");
@@ -226,7 +211,7 @@ namespace SeatsFinderBot
             return FinalStatus;
         }
 
-        private string runAction(string semester, string reserved)
+        private string runAction(string semester, string reserved, string number)
         {
             WebClient client = new WebClient();
 
@@ -241,17 +226,36 @@ namespace SeatsFinderBot
 
                 string classStatus = client.DownloadString("http://www.seatsfinder.tk/api/WebAPI?checkClassStatus=true&prefix=&number=&location=Tempe&term=" + semester + "&sectionNumber=" + sec + "&reservedSeats=" + reserved);
 
+
                 System.Diagnostics.Debug.WriteLine("classStatus: " + classStatus);
 
                 System.Diagnostics.Debug.WriteLine("classStatus: " + classStatus);
 
                 if (classStatus == "\"FULL\"")
                 {
+                    if (swapRadio.Checked)
+                    {
+                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID="+ number + "&time=" + currentTime + "&status=FULL");
+                    }
+                    else
+                    {
+                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID="+ number + "&time=" + currentTime + "&status=FULL");
+                    }
+                    
                     SetCloseClass();
                     return "FULL.";
                 }
                 else if (classStatus == "\"OPEN\"")
                 {
+                    if (swapRadio.Checked)
+                    {
+                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=OPEN");
+                    }
+                    else
+                    {
+                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=OPEN");
+                    }
+
                     SetOpenClass();
 
                     if (addRadio.Checked)
@@ -267,6 +271,15 @@ namespace SeatsFinderBot
             }
             catch (Exception ex)
             {
+                if (swapRadio.Checked)
+                {
+                    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=ERROR");
+                }
+                else
+                {
+                    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=ERROR");
+                }
+
                 return "ERROR CATCHED";
             }
             return "\n";
@@ -335,59 +348,107 @@ namespace SeatsFinderBot
             }
         }
 
+        string checkPower = "";
+        string GUID = "";
+
         private void button1_Click(object sender, EventArgs e)
         {
-            if(!swapRadio.Checked && !addRadio.Checked)
+            if(key.Text != "Enjoy")
             {
-                warningLabel.Text = "Please select one of the radio button: Swap or Add.";
+                button1.Text = "Validating Key...";
             }
-            else if(swapRadio.Checked && swapWith.Text == "")
+
+            if(checkPower != "true")
             {
-                warningLabel.Text = "Please enter which class you want to swap with (the class you already enrolled).";
+                WebClient client = new WebClient();
+                checkPower = client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?checkifsuperpowered=true&guid=" + key.Text);
             }
-            else if(userText.Text == "")
+                       
+            if(checkPower == "true")
             {
-                warningLabel.Text = "Please enter your asu user name.";
+                if(key.Text != "Activated!")
+                {
+                    GUID = key.Text;
+                }
+                key.Enabled = false;
+                key.Text = "Activated!";
+                key.ForeColor = System.Drawing.Color.Green;
+                if (!swapRadio.Checked && !addRadio.Checked)
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please select one of the radio button: Swap or Add.";
+                }
+                else if (swapRadio.Checked && swapWith.Text == "")
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please enter which class you want to swap with (the class you already enrolled).";
+                }
+                else if (userText.Text == "")
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please enter your asu user name.";
+                }
+                else if (passwordText.Text == "")
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please enter your asu password.";
+                }
+                else if (sectionText.Text == "")
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please enter the class number you want to track.";
+                }
+                else if (swapWith.Text.Length != 5 && swapRadio.Checked)
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please enter the correct format of class number (check if contain spaces)";
+                }
+                else if (sectionText.Text.Length != 5)
+                {
+                    button1.Text = "Run";
+                    warningLabel.Text = "Please enter the correct format of class number (check if contain spaces)";
+                }
+                else
+                {
+                    button1.Text = "Running now...";
+                    addRadio.Enabled = false;
+                    swapRadio.Enabled = false;
+                    button1.Enabled = false;
+                    key.Enabled = false;
+                    string semester = semesterCombo.Text;
+                    string reserved = reservedCombo.Text;
+                    string number = sectionText.Text;
+
+                    warningLabel.ForeColor = System.Drawing.Color.Green;
+                    warningLabel.Text = "Running now, close the app if you want to stop.";
+                    label2.Text = "Checking...";
+                    l.Add("Checking...");
+                    var startTimeSpan = TimeSpan.Zero;
+                    var periodTimeSpan = TimeSpan.FromMinutes(1);
+                    int i = 0;
+                    var timer = new System.Threading.Timer((e1) => {
+                        string str = runAction(semester, reserved, number);
+                        i++;
+                        SetText(str, i);
+                    }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+                }
             }
-            else if (passwordText.Text == "")
+            else if(checkPower == "false")
             {
-                warningLabel.Text = "Please enter your asu password.";
-            }
-            else if(sectionText.Text == "")
-            {
-                warningLabel.Text = "Please enter the class number you want to track.";
-            }
-            else if(swapWith.Text.Length != 5 && swapRadio.Checked)
-            {
-                warningLabel.Text = "Please enter the correct format of class number (check if contain spaces)";
-            }
-            else if (sectionText.Text.Length != 5)
-            {
-                warningLabel.Text = "Please enter the correct format of class number (check if contain spaces)";
+                button1.Text = "Run";
+                button1.Enabled = true;
+                key.Enabled = true;
+                warningLabel.Text = "GUID is incorrect. Please contact admin.";
             }
             else
             {
-                string semester = semesterCombo.Text;
-                string reserved = reservedCombo.Text;
-                warningLabel.ForeColor = System.Drawing.Color.Blue;
-                warningLabel.Text = "Running now, close the app if you want to stop.";
-                label2.Text = "Checking...";
-                l.Add("Checking...");
-                var startTimeSpan = TimeSpan.Zero;
-                var periodTimeSpan = TimeSpan.FromMinutes(1);
-                int i = 0;
-                var timer = new System.Threading.Timer((e1) => {
-                    string str = runAction(semester, reserved);
-                    i++;
-                    SetText(str, i);
-                }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+                warningLabel.Text = "Maybe server error. Please contact admin.";
             }
-            
+
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-        }
+        private void Form1_Load(object sender, EventArgs e){}
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -400,5 +461,6 @@ namespace SeatsFinderBot
             swapWith.Enabled = true;
         }
 
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e){}
     }
 }

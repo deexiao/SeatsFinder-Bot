@@ -41,6 +41,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.swapRadio = new System.Windows.Forms.RadioButton();
             this.addRadio = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.semesterCombo = new System.Windows.Forms.ComboBox();
+            this.reservedCombo = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -55,10 +59,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.semesterCombo = new System.Windows.Forms.ComboBox();
-            this.reservedCombo = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.key = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
@@ -68,26 +70,26 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(2, 255);
+            this.label3.Location = new System.Drawing.Point(2, 224);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 23);
+            this.label3.Size = new System.Drawing.Size(170, 23);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Class Number (eg: 11289)";
+            this.label3.Text = "Class # (eg: 11289)";
             // 
             // sectionText
             // 
-            this.sectionText.Location = new System.Drawing.Point(248, 257);
-            this.sectionText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.sectionText.Location = new System.Drawing.Point(199, 226);
+            this.sectionText.Margin = new System.Windows.Forms.Padding(2);
             this.sectionText.Name = "sectionText";
-            this.sectionText.Size = new System.Drawing.Size(120, 20);
+            this.sectionText.Size = new System.Drawing.Size(169, 20);
             this.sectionText.TabIndex = 5;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(52, 664);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(368, 36);
             this.button1.TabIndex = 6;
@@ -99,7 +101,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(2, 127);
+            this.label4.Location = new System.Drawing.Point(2, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 23);
@@ -110,7 +112,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(2, 192);
+            this.label5.Location = new System.Drawing.Point(2, 167);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 23);
@@ -119,28 +121,30 @@
             // 
             // userText
             // 
-            this.userText.Location = new System.Drawing.Point(248, 129);
-            this.userText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userText.Location = new System.Drawing.Point(199, 112);
+            this.userText.Margin = new System.Windows.Forms.Padding(2);
             this.userText.Name = "userText";
-            this.userText.Size = new System.Drawing.Size(120, 20);
+            this.userText.Size = new System.Drawing.Size(169, 20);
             this.userText.TabIndex = 9;
             // 
             // passwordText
             // 
-            this.passwordText.Location = new System.Drawing.Point(248, 194);
-            this.passwordText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordText.Location = new System.Drawing.Point(199, 169);
+            this.passwordText.Margin = new System.Windows.Forms.Padding(2);
             this.passwordText.Name = "passwordText";
-            this.passwordText.Size = new System.Drawing.Size(120, 20);
+            this.passwordText.Size = new System.Drawing.Size(169, 20);
             this.passwordText.TabIndex = 10;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.18488F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.81512F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.87405F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.12595F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.key, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label16, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.passwordText, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.userText, 1, 2);
@@ -156,42 +160,44 @@
             this.tableLayoutPanel1.Controls.Add(this.reservedCombo, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(52, 215);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.1811F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.8189F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(397, 427);
             this.tableLayoutPanel1.TabIndex = 12;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // swapWith
             // 
-            this.swapWith.Location = new System.Drawing.Point(248, 67);
-            this.swapWith.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.swapWith.Location = new System.Drawing.Point(199, 57);
+            this.swapWith.Margin = new System.Windows.Forms.Padding(2);
             this.swapWith.Name = "swapWith";
-            this.swapWith.Size = new System.Drawing.Size(120, 20);
+            this.swapWith.Size = new System.Drawing.Size(169, 20);
             this.swapWith.TabIndex = 14;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(2, 65);
+            this.label8.Location = new System.Drawing.Point(2, 55);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(197, 46);
+            this.label8.Size = new System.Drawing.Size(190, 23);
             this.label8.TabIndex = 13;
-            this.label8.Text = "Swap with which class? \r\n(If Swap is Selected)";
+            this.label8.Text = "Swap with which class? ";
             // 
             // swapRadio
             // 
             this.swapRadio.AutoSize = true;
             this.swapRadio.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.swapRadio.Location = new System.Drawing.Point(2, 2);
-            this.swapRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.swapRadio.Margin = new System.Windows.Forms.Padding(2);
             this.swapRadio.Name = "swapRadio";
             this.swapRadio.Size = new System.Drawing.Size(130, 27);
             this.swapRadio.TabIndex = 12;
@@ -204,8 +210,8 @@
             // 
             this.addRadio.AutoSize = true;
             this.addRadio.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addRadio.Location = new System.Drawing.Point(248, 2);
-            this.addRadio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addRadio.Location = new System.Drawing.Point(199, 2);
+            this.addRadio.Margin = new System.Windows.Forms.Padding(2);
             this.addRadio.Name = "addRadio";
             this.addRadio.Size = new System.Drawing.Size(120, 27);
             this.addRadio.TabIndex = 11;
@@ -214,13 +220,121 @@
             this.addRadio.UseVisualStyleBackColor = true;
             this.addRadio.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(2, 281);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(84, 23);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "Semester";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(2, 338);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(80, 23);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "Reserved";
+            // 
+            // semesterCombo
+            // 
+            this.semesterCombo.FormattingEnabled = true;
+            this.semesterCombo.Items.AddRange(new object[] {
+            "Spring+2019",
+            "Fall+2019",
+            "Spring+2020",
+            "Fall+2020",
+            "Spring+2021",
+            "Fall+2021",
+            "Spring+2022",
+            "Fall+2022",
+            "Spring+2023",
+            "Fall+2023",
+            "Spring+2024",
+            "Fall+2024",
+            "Spring+2025",
+            "Fall+2025"});
+            this.semesterCombo.Location = new System.Drawing.Point(200, 284);
+            this.semesterCombo.Name = "semesterCombo";
+            this.semesterCombo.Size = new System.Drawing.Size(168, 21);
+            this.semesterCombo.TabIndex = 17;
+            this.semesterCombo.Text = "Spring+2019";
+            // 
+            // reservedCombo
+            // 
+            this.reservedCombo.FormattingEnabled = true;
+            this.reservedCombo.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50"});
+            this.reservedCombo.Location = new System.Drawing.Point(200, 341);
+            this.reservedCombo.Name = "reservedCombo";
+            this.reservedCombo.Size = new System.Drawing.Size(168, 21);
+            this.reservedCombo.TabIndex = 18;
+            this.reservedCombo.Text = "0";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(3, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 15);
+            this.label2.Size = new System.Drawing.Size(104, 15);
             this.label2.TabIndex = 15;
             this.label2.Text = "Waiting for Run...";
             // 
@@ -275,24 +389,24 @@
             // classCheckedTimes
             // 
             this.classCheckedTimes.AutoSize = true;
-            this.classCheckedTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classCheckedTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classCheckedTimes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.classCheckedTimes.Location = new System.Drawing.Point(627, 218);
             this.classCheckedTimes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.classCheckedTimes.Name = "classCheckedTimes";
-            this.classCheckedTimes.Size = new System.Drawing.Size(16, 18);
+            this.classCheckedTimes.Size = new System.Drawing.Size(17, 18);
             this.classCheckedTimes.TabIndex = 18;
             this.classCheckedTimes.Text = "0";
             // 
             // classOpenTimes
             // 
             this.classOpenTimes.AutoSize = true;
-            this.classOpenTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classOpenTimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classOpenTimes.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.classOpenTimes.Location = new System.Drawing.Point(681, 261);
             this.classOpenTimes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.classOpenTimes.Name = "classOpenTimes";
-            this.classOpenTimes.Size = new System.Drawing.Size(16, 18);
+            this.classOpenTimes.Size = new System.Drawing.Size(17, 18);
             this.classOpenTimes.TabIndex = 19;
             this.classOpenTimes.Text = "0";
             // 
@@ -369,112 +483,23 @@
             this.label13.TabIndex = 25;
             this.label13.Text = "times.";
             // 
-            // label14
+            // label16
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(2, 318);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(84, 23);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "Semester";
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(2, 394);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(89, 23);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "GUID Key";
             // 
-            // label15
+            // key
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(2, 386);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 23);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "Reserved";
-            // 
-            // semesterCombo
-            // 
-            this.semesterCombo.FormattingEnabled = true;
-            this.semesterCombo.Items.AddRange(new object[] {
-            "Spring+2019",
-            "Fall+2019",
-            "Spring+2020",
-            "Fall+2020",
-            "Spring+2021",
-            "Fall+2021",
-            "Spring+2022",
-            "Fall+2022",
-            "Spring+2023",
-            "Fall+2023",
-            "Spring+2024",
-            "Fall+2024",
-            "Spring+2025",
-            "Fall+2025"});
-            this.semesterCombo.Location = new System.Drawing.Point(249, 321);
-            this.semesterCombo.Name = "semesterCombo";
-            this.semesterCombo.Size = new System.Drawing.Size(121, 21);
-            this.semesterCombo.TabIndex = 17;
-            this.semesterCombo.Text = "Spring+2019";
-            // 
-            // reservedCombo
-            // 
-            this.reservedCombo.FormattingEnabled = true;
-            this.reservedCombo.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50"});
-            this.reservedCombo.Location = new System.Drawing.Point(249, 389);
-            this.reservedCombo.Name = "reservedCombo";
-            this.reservedCombo.Size = new System.Drawing.Size(121, 21);
-            this.reservedCombo.TabIndex = 18;
-            this.reservedCombo.Text = "0";
+            this.key.Location = new System.Drawing.Point(200, 397);
+            this.key.Name = "key";
+            this.key.Size = new System.Drawing.Size(168, 20);
+            this.key.TabIndex = 27;
             // 
             // Form1
             // 
@@ -494,7 +519,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
@@ -541,6 +566,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox semesterCombo;
         private System.Windows.Forms.ComboBox reservedCombo;
+        private System.Windows.Forms.TextBox key;
+        private System.Windows.Forms.Label label16;
     }
 }
 
