@@ -7,12 +7,12 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
 using System.Net;
 using OpenQA.Selenium.Support.UI;
+using System.Timers;
 
 namespace SeatsFinderBot
 {
     public partial class Form1 : Form
     {
-
         List<string> l = new List<string>();
 
         public Form1()
@@ -224,8 +224,7 @@ namespace SeatsFinderBot
                 System.Diagnostics.Debug.WriteLine("semesterCombo.Text: " + semester);
                 System.Diagnostics.Debug.WriteLine("reservedCombo.Text: " + reserved);
 
-                string classStatus = client.DownloadString("http://www.seatsfinder.tk/api/WebAPI?checkClassStatus=true&prefix=&number=&location=Tempe&term=" + semester + "&sectionNumber=" + sec + "&reservedSeats=" + reserved);
-
+                string classStatus = client.DownloadString("http://104.154.119.236/api/WebAPI?checkClassStatus=true&prefix=&number=&location=Tempe&term=" + semester + "&sectionNumber=" + sec + "&reservedSeats=" + reserved);
 
                 System.Diagnostics.Debug.WriteLine("classStatus: " + classStatus);
 
@@ -235,11 +234,11 @@ namespace SeatsFinderBot
                 {
                     if (swapRadio.Checked)
                     {
-                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID="+ number + "&time=" + currentTime + "&status=FULL");
+                        client.DownloadString("http://104.154.119.236/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID="+ number + "&time=" + currentTime + "&status=FULL");
                     }
                     else
                     {
-                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID="+ number + "&time=" + currentTime + "&status=FULL");
+                        client.DownloadString("http://104.154.119.236/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID="+ number + "&time=" + currentTime + "&status=FULL");
                     }
                     
                     SetCloseClass();
@@ -249,11 +248,11 @@ namespace SeatsFinderBot
                 {
                     if (swapRadio.Checked)
                     {
-                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=OPEN");
+                        client.DownloadString("http://104.154.119.236/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=OPEN");
                     }
                     else
                     {
-                        client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=OPEN");
+                        client.DownloadString("http://104.154.119.236/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=OPEN");
                     }
 
                     SetOpenClass();
@@ -273,11 +272,11 @@ namespace SeatsFinderBot
             {
                 if (swapRadio.Checked)
                 {
-                    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=ERROR");
+                    client.DownloadString("http://104.154.119.236/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=ERROR");
                 }
                 else
                 {
-                    client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=ERROR");
+                    client.DownloadString("http://104.154.119.236/api/WebAPI?GetSuperPowerVMTaskSchedulerStatus=true&guid=" + GUID + "&taskID=" + number + "&time=" + currentTime + "&status=ERROR");
                 }
 
                 return "ERROR CATCHED";
@@ -291,9 +290,6 @@ namespace SeatsFinderBot
 
         private void SetText(string text, int i)
         {
-            // InvokeRequired required compares the thread ID of the
-            // calling thread to the thread ID of the creating thread.
-            // If these threads are different, it returns true.
             if (this.label2.InvokeRequired)
             {
                 SetTextCallback d = new SetTextCallback(SetText);
@@ -317,9 +313,6 @@ namespace SeatsFinderBot
 
         private void SetOpenClass()
         {
-            // InvokeRequired required compares the thread ID of the
-            // calling thread to the thread ID of the creating thread.
-            // If these threads are different, it returns true.
             if (this.label2.InvokeRequired)
             {
                 SetTextCallback2 d = new SetTextCallback2(SetOpenClass);
@@ -334,9 +327,6 @@ namespace SeatsFinderBot
 
         private void SetCloseClass()
         {
-            // InvokeRequired required compares the thread ID of the
-            // calling thread to the thread ID of the creating thread.
-            // If these threads are different, it returns true.
             if (this.label2.InvokeRequired)
             {
                 SetTextCallback3 d = new SetTextCallback3(SetCloseClass);
@@ -351,6 +341,8 @@ namespace SeatsFinderBot
         string checkPower = "";
         string GUID = "";
 
+        private static System.Threading.Timer _timer;
+
         private void button1_Click(object sender, EventArgs e)
         {
             if(key.Text != "Enjoy")
@@ -361,7 +353,7 @@ namespace SeatsFinderBot
             if(checkPower != "true")
             {
                 WebClient client = new WebClient();
-                checkPower = client.DownloadString("http://seatsfinderweb.azurewebsites.net/api/WebAPI?checkifsuperpowered=true&guid=" + key.Text);
+                checkPower = client.DownloadString("http://104.154.119.236/api/WebAPI?checkifsuperpowered=true&guid=" + key.Text);
             }
                        
             if(checkPower == "true")
@@ -426,12 +418,14 @@ namespace SeatsFinderBot
                     var startTimeSpan = TimeSpan.Zero;
                     var periodTimeSpan = TimeSpan.FromMinutes(1);
                     int i = 0;
-                    var timer = new System.Threading.Timer((e1) => {
+
+                    _timer = new System.Threading.Timer((e1) => {
                         string str = runAction(semester, reserved, number);
                         i++;
                         SetText(str, i);
-                    }, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
-                }
+                        _timer.Change(10000, Timeout.Infinite);
+                    }, null, 10000, Timeout.Infinite);
+                    }
             }
             else if(checkPower == "false")
             {
@@ -444,8 +438,6 @@ namespace SeatsFinderBot
             {
                 warningLabel.Text = "Maybe server error. Please contact admin.";
             }
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e){}
@@ -462,5 +454,10 @@ namespace SeatsFinderBot
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e){}
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
