@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # SeatsFinderBot
 ### An auto class register bot designed for ASU students runs on ***_Windows_*** 
 ![Screen Shot 2018-11-12 at 5.31.50 A](botimage.png)
@@ -27,4 +26,3 @@
 
 #### Claim
 * SeatsFinderBot does not store any of your personal information.
->>>>>>> 3579c649f232e7f274cff83cb129258d9a000909
