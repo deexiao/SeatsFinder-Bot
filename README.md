@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-# SeatsFinderBot
-### An auto class register bot designed for ASU students runs on ***_Windows_*** 
-![Screen Shot 2018-11-12 at 5.31.50 A](botimage.png)
-=======
 ## ASU Class Register Bot 
 
 #### System Requirement
@@ -14,7 +9,7 @@
 #### How to use
 * First, you will need a KEY to get access. 
 * Download the repository to your ***_Windows_*** computer.
-* Open ***SeatsFinderBot.exe*** [Open it in folder, don't move it out].
+* Open ***SeatsFinderBot-master/SeatsFinderBot/SeatsFinderBot/bin/Release/SeatsFinderBot.exe*** [Open it in folder, don't move it out].
 * Enter the required options.
 * You can open either on your local PC or put it in a cloud VM so that you don't have to shut down your computer.
 * Enjoy!
@@ -27,4 +22,3 @@
 
 #### Claim
 * SeatsFinderBot does not store any of your personal information.
->>>>>>> 3579c649f232e7f274cff83cb129258d9a000909
