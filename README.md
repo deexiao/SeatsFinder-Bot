@@ -9,7 +9,7 @@
 #### How to use
 * First, you will need a KEY to get access. 
 * Download the repository to your ***_Windows_*** computer.
-* Open ***SeatsFinderBot.exe*** [Open it in folder, don't move it out].
+* Open ***SeatsFinderBot-master/SeatsFinderBot/SeatsFinderBot/bin/Release/SeatsFinderBot.exe*** [Open it in folder, don't move it out].
 * Enter the required options.
 * You can open either on your local PC or put it in a cloud VM so that you don't have to shut down your computer.
 * Enjoy!
