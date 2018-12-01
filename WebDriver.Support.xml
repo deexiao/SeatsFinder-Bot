@@ -300,24 +300,30 @@
             </summary>
             <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementEventArgs"/> that contains the event data.</param>
         </member>
+<<<<<<< HEAD
         <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanging(OpenQA.Selenium.Support.Events.WebElementEventArgs)">
             <summary>
             Raises the <see cref="E:OpenQA.Selenium.Support.Events.EventFiringWebDriver.ElementValueChanging"/> event.
             </summary>
             <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementEventArgs"/> that contains the event data.</param>
         </member>
+=======
+>>>>>>> 3579c649f232e7f274cff83cb129258d9a000909
         <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanging(OpenQA.Selenium.Support.Events.WebElementValueEventArgs)">
             <summary>
             Raises the <see cref="E:OpenQA.Selenium.Support.Events.EventFiringWebDriver.ElementValueChanging"/> event.
             </summary>
             <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementValueEventArgs"/> that contains the event data.</param>
         </member>
+<<<<<<< HEAD
         <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanged(OpenQA.Selenium.Support.Events.WebElementEventArgs)">
             <summary>
             Raises the <see cref="E:OpenQA.Selenium.Support.Events.EventFiringWebDriver.ElementValueChanged"/> event.
             </summary>
             <param name="e">A <see cref="T:OpenQA.Selenium.Support.Events.WebElementEventArgs"/> that contains the event data.</param>
         </member>
+=======
+>>>>>>> 3579c649f232e7f274cff83cb129258d9a000909
         <member name="M:OpenQA.Selenium.Support.Events.EventFiringWebDriver.OnElementValueChanged(OpenQA.Selenium.Support.Events.WebElementValueEventArgs)">
             <summary>
             Raises the <see cref="E:OpenQA.Selenium.Support.Events.EventFiringWebDriver.ElementValueChanged"/> event.
