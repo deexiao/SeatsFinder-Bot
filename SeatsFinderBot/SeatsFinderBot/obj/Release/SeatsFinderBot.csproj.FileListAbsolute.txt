@@ -12,4 +12,3 @@
 \\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.csproj.CopyComplete
 \\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.exe
 \\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.pdb
-\\Mac\Dropbox\Project\SeatsFinderBot\SeatsFinderBot\SeatsFinderBot\obj\Release\SeatsFinderBot.csprojAssemblyReference.cache
